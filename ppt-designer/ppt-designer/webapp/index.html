@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT Professional Designer - AI 기반 맞춤형 템플릿 추천</title>
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/public/ppt_designer_styles.css">
+    
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    
+    <!-- React -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    
+    <!-- Babel for JSX (개발용) -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <meta name="description" content="AI 기반 전략적 질문을 통한 맞춤형 PowerPoint 템플릿 추천 시스템">
+    <meta name="keywords" content="PPT, PowerPoint, 템플릿, 디자인, AI, 추천, 강의자료">
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Application Script -->
+    <script type="text/babel" src="/public/ppt_designer_frontend.js"></script>
+    
+    <!-- Initialize App -->
+    <script type="text/babel">
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<PPTDesignerApp />);
+    </script>
+    
+    <noscript>
+        이 애플리케이션을 사용하려면 JavaScript를 활성화해야 합니다.
+    </noscript>
+</body>
+</html>

@@ -1,0 +1,807 @@
+/**
+ * PPT Professional Designer - Styles
+ * Beige/Orange themed professional design
+ */
+
+/* ============================================================================
+   ROOT VARIABLES - Beige/Orange Color Scheme
+   ============================================================================ */
+:root {
+    /* Primary Colors - Beige/Cream Base */
+    --color-bg-primary: #FAF7F0;
+    --color-bg-secondary: #F5EFE7;
+    --color-bg-tertiary: #E8DFD0;
+    
+    /* Accent Colors - Orange/Brown */
+    --color-accent-primary: #E67E22;
+    --color-accent-secondary: #D35400;
+    --color-accent-light: #F39C12;
+    --color-accent-dark: #8B4513;
+    
+    /* Neutral Colors */
+    --color-text-primary: #2C2416;
+    --color-text-secondary: #5D4E37;
+    --color-text-muted: #8B7355;
+    
+    /* Status Colors */
+    --color-success: #27AE60;
+    --color-warning: #F39C12;
+    --color-error: #E74C3C;
+    --color-info: #3498DB;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(139, 69, 19, 0.1);
+    --shadow-md: 0 4px 6px rgba(139, 69, 19, 0.15);
+    --shadow-lg: 0 10px 15px rgba(139, 69, 19, 0.2);
+    
+    /* Border Radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-2xl: 48px;
+    
+    /* Typography */
+    --font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 32px;
+}
+
+/* ============================================================================
+   GLOBAL STYLES
+   ============================================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--font-size-base);
+    color: var(--color-text-primary);
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--color-text-primary);
+}
+
+h1 { font-size: var(--font-size-3xl); }
+h2 { font-size: var(--font-size-2xl); }
+h3 { font-size: var(--font-size-xl); }
+h4 { font-size: var(--font-size-lg); }
+
+a {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent-secondary);
+}
+
+button {
+    font-family: var(--font-family);
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* ============================================================================
+   APP CONTAINER
+   ============================================================================ */
+.ppt-designer-app {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+.app-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding: var(--spacing-xl);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-md);
+}
+
+.app-header h1 {
+    color: var(--color-accent-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.app-header .subtitle {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: var(--color-bg-tertiary);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-accent-light) 0%, var(--color-accent-primary) 100%);
+    border-radius: var(--radius-lg);
+    transition: width 0.5s ease;
+    position: relative;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200px 0;
+    }
+    100% {
+        background-position: 200px 0;
+    }
+}
+
+.progress-text {
+    display: block;
+    text-align: center;
+    margin-top: var(--spacing-sm);
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+/* ============================================================================
+   PHASE NAVIGATION
+   ============================================================================ */
+.phase-navigation {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+    overflow-x: auto;
+    padding: var(--spacing-md);
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.phase-button {
+    flex: 1;
+    min-width: 150px;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    transition: all 0.3s ease;
+}
+
+.phase-button:hover {
+    background: var(--color-bg-tertiary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.phase-button.active {
+    background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+    color: white;
+    box-shadow: var(--shadow-lg);
+}
+
+.phase-icon {
+    font-size: var(--font-size-2xl);
+}
+
+.phase-name {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+}
+
+.phase-button.active .phase-name {
+    color: white;
+}
+
+/* ============================================================================
+   QUESTIONNAIRE SECTION
+   ============================================================================ */
+.questionnaire-section {
+    background: white;
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    box-shadow: var(--shadow-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Question Card */
+.question-card {
+    margin-bottom: var(--spacing-xl);
+}
+
+.question-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.question-number {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.required-badge {
+    background: var(--color-accent-primary);
+    color: white;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+}
+
+.question-text {
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+    line-height: 1.5;
+}
+
+/* Input Styles */
+.single-choice-input,
+.multiple-choice-input,
+.boolean-input {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
+.choice-button {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--color-bg-secondary);
+    border: 2px solid transparent;
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.choice-button:hover {
+    background: var(--color-bg-tertiary);
+    border-color: var(--color-accent-light);
+    transform: translateY(-2px);
+}
+
+.choice-button.selected {
+    background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+    color: white;
+    border-color: var(--color-accent-secondary);
+    box-shadow: var(--shadow-md);
+}
+
+.text-input {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: var(--color-bg-primary);
+    border: 2px solid var(--color-bg-tertiary);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-size: var(--font-size-base);
+    font-family: var(--font-family);
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
+
+.text-input:focus {
+    outline: none;
+    border-color: var(--color-accent-primary);
+    background: white;
+}
+
+.text-input::placeholder {
+    color: var(--color-text-muted);
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-xl);
+    border-top: 2px solid var(--color-bg-tertiary);
+}
+
+.nav-button {
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--color-accent-primary);
+    color: white;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+.nav-button:hover:not(:disabled) {
+    background: var(--color-accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-button:disabled {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-muted);
+    cursor: not-allowed;
+}
+
+.nav-button.prev {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+}
+
+.nav-button.prev:hover:not(:disabled) {
+    background: var(--color-bg-tertiary);
+}
+
+.nav-button.next {
+    margin-left: auto;
+}
+
+/* ============================================================================
+   RECOMMENDATIONS PANEL
+   ============================================================================ */
+.recommendations-panel {
+    padding: var(--spacing-2xl);
+    background: white;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+.recommendations-panel h2 {
+    text-align: center;
+    color: var(--color-accent-secondary);
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Recommendations Grid */
+.recommendations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+/* Template Card */
+.template-card {
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    position: relative;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.template-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-accent-light);
+}
+
+.template-rank {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.template-preview {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.template-name {
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+}
+
+.match-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: white;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.score-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+.score-value {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+}
+
+.template-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.tag {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: var(--color-accent-light);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+}
+
+.pros-cons {
+    margin-bottom: var(--spacing-md);
+}
+
+.pros h4 {
+    color: var(--color-success);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.cons h4 {
+    color: var(--color-warning);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.pros ul,
+.cons ul {
+    list-style: none;
+    padding-left: var(--spacing-md);
+}
+
+.pros li,
+.cons li {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+}
+
+.pros li::before {
+    content: "•";
+    color: var(--color-success);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.cons li::before {
+    content: "•";
+    color: var(--color-warning);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.difficulty-badge {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.download-button {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-md);
+    background: linear-gradient(135deg, var(--color-accent-primary) 0%, var(--color-accent-secondary) 100%);
+    color: white;
+    border-radius: var(--radius-md);
+    text-align: center;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ============================================================================
+   IMPLEMENTATION PLAN CARD
+   ============================================================================ */
+.implementation-plan-card {
+    background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
+    border: 2px solid var(--color-accent-light);
+}
+
+.implementation-plan-card h3 {
+    color: var(--color-accent-secondary);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-2xl);
+}
+
+.plan-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.plan-item {
+    background: white;
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.plan-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    font-weight: 600;
+}
+
+.plan-value {
+    font-size: var(--font-size-lg);
+    color: var(--color-accent-secondary);
+    font-weight: 700;
+}
+
+.plan-phases,
+.plan-resources {
+    background: white;
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.plan-phases h4,
+.plan-resources h4 {
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.plan-phases ol {
+    padding-left: var(--spacing-xl);
+}
+
+.plan-phases li {
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+}
+
+.plan-resources ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.plan-resources li {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--color-bg-primary);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-secondary);
+}
+
+/* ============================================================================
+   EXPORT BUTTON
+   ============================================================================ */
+.export-button {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin: var(--spacing-xl) auto 0;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--color-accent-dark);
+    color: white;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.export-button:hover {
+    background: var(--color-accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ============================================================================
+   LOADING SPINNER
+   ============================================================================ */
+.loading-spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: var(--spacing-lg);
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border: 4px solid var(--color-bg-tertiary);
+    border-top-color: var(--color-accent-primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-lg);
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+@media (max-width: 768px) {
+    .ppt-designer-app {
+        padding: var(--spacing-md);
+    }
+
+    .app-header {
+        padding: var(--spacing-lg);
+    }
+
+    .app-header h1 {
+        font-size: var(--font-size-2xl);
+    }
+
+    .phase-navigation {
+        flex-direction: column;
+    }
+
+    .phase-button {
+        min-width: 100%;
+    }
+
+    .questionnaire-section {
+        padding: var(--spacing-lg);
+    }
+
+    .recommendations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .plan-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .navigation-buttons {
+        flex-direction: column;
+    }
+
+    .nav-button {
+        width: 100%;
+    }
+
+    .nav-button.next {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-header h1 {
+        font-size: var(--font-size-xl);
+    }
+
+    .question-text {
+        font-size: var(--font-size-lg);
+    }
+
+    .choice-button {
+        width: 100%;
+    }
+}
+
+/* ============================================================================
+   ANIMATIONS
+   ============================================================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.question-card {
+    animation: fadeIn 0.5s ease;
+}
+
+.template-card {
+    animation: fadeIn 0.5s ease;
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+.text-center {
+    text-align: center;
+}
+
+.mt-lg {
+    margin-top: var(--spacing-lg);
+}
+
+.mb-lg {
+    margin-bottom: var(--spacing-lg);
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
