@@ -1,0 +1,861 @@
+{
+  "system_metadata": {
+    "name": "PPT Professional Designer System",
+    "version": "1.0.0",
+    "description": "AI Designer Specializing in Content-Based PowerPoint Design and Template Optimization",
+    "language": "ko-KR",
+    "created": "2025-11-05"
+  },
+  
+  "workflow_phases": [
+    {
+      "phase_id": 1,
+      "phase_name": "Deep Content Analysis",
+      "phase_description": "Strategic questioning to understand content structure and requirements",
+      "sections": [
+        {
+          "section_id": "1.1",
+          "section_name": "Content Categorization & Structure Discovery",
+          "strategic_questions": [
+            {
+              "question_id": "q1.1.1",
+              "question_text": "콘텐츠의 핵심 목표가 무엇인가요?",
+              "question_type": "single_choice",
+              "options": ["정보 전달", "설득", "교육", "판매", "보고"],
+              "required": true,
+              "weight": 10
+            },
+            {
+              "question_id": "q1.1.2",
+              "question_text": "가장 중요한 3가지 핵심 메시지는 무엇인가요?",
+              "question_type": "text",
+              "required": true,
+              "weight": 9
+            },
+            {
+              "question_id": "q1.1.3",
+              "question_text": "데이터나 수치 자료가 포함되어 있나요? 어떤 종류인가요?",
+              "question_type": "text",
+              "required": false,
+              "weight": 7
+            },
+            {
+              "question_id": "q1.1.4",
+              "question_text": "스토리텔링 구조가 필요한가요?",
+              "question_type": "single_choice",
+              "options": ["문제-해결책", "시간순", "비교분석", "불필요"],
+              "required": false,
+              "weight": 6
+            }
+          ],
+          "customized_directions": {
+            "정보 전달": {
+              "structure": "Linear structure with clear hierarchies",
+              "template_tags": ["informational", "hierarchical", "clean"],
+              "slide_density": "medium",
+              "visual_emphasis": "diagrams_and_charts"
+            },
+            "설득": {
+              "structure": "Problem-solution narrative with emotional hooks",
+              "template_tags": ["persuasive", "story_driven", "impactful"],
+              "slide_density": "low",
+              "visual_emphasis": "strong_imagery"
+            },
+            "교육": {
+              "structure": "Progressive learning modules with reinforcement",
+              "template_tags": ["educational", "step_by_step", "clear"],
+              "slide_density": "medium_high",
+              "visual_emphasis": "examples_and_practice"
+            },
+            "판매": {
+              "structure": "AIDA (Attention-Interest-Desire-Action) framework",
+              "template_tags": ["sales", "conversion_focused", "bold"],
+              "slide_density": "low",
+              "visual_emphasis": "call_to_action"
+            },
+            "보고": {
+              "structure": "Executive summary with detailed sections",
+              "template_tags": ["professional", "data_heavy", "formal"],
+              "slide_density": "high",
+              "visual_emphasis": "data_visualization"
+            }
+          }
+        },
+        {
+          "section_id": "1.2",
+          "section_name": "Audience & Context Profiling",
+          "strategic_questions": [
+            {
+              "question_id": "q1.2.1",
+              "question_text": "주요 청중은 누구인가요?",
+              "question_type": "single_choice",
+              "options": ["임원진", "동료", "고객", "학생", "일반인"],
+              "required": true,
+              "weight": 10
+            },
+            {
+              "question_id": "q1.2.2",
+              "question_text": "발표 환경은 어디인가요?",
+              "question_type": "single_choice",
+              "options": ["회의실", "컨퍼런스", "온라인", "교실"],
+              "required": true,
+              "weight": 8
+            },
+            {
+              "question_id": "q1.2.3",
+              "question_text": "발표 시간은 얼마나 되나요? 질의응답 시간이 있나요?",
+              "question_type": "text",
+              "required": true,
+              "weight": 7
+            },
+            {
+              "question_id": "q1.2.4",
+              "question_text": "청중의 해당 주제 사전 지식 수준은 어느 정도인가요?",
+              "question_type": "single_choice",
+              "options": ["초급", "중급", "고급", "전문가"],
+              "required": true,
+              "weight": 8
+            }
+          ],
+          "customized_directions": {
+            "임원진": {
+              "approach": "High-level overview slides with executive summary",
+              "slide_count_recommendation": "10-15",
+              "detail_level": "low",
+              "focus": "key_insights_and_recommendations"
+            },
+            "동료": {
+              "approach": "Detailed data and methodology slides",
+              "slide_count_recommendation": "20-30",
+              "detail_level": "high",
+              "focus": "technical_accuracy"
+            },
+            "고객": {
+              "approach": "Benefits-focused with clear value propositions",
+              "slide_count_recommendation": "15-20",
+              "detail_level": "medium",
+              "focus": "outcomes_and_benefits"
+            },
+            "학생": {
+              "approach": "Educational progression with examples",
+              "slide_count_recommendation": "25-40",
+              "detail_level": "medium_high",
+              "focus": "learning_and_comprehension"
+            },
+            "일반인": {
+              "approach": "Simplified concepts with relatable examples",
+              "slide_count_recommendation": "15-25",
+              "detail_level": "low_medium",
+              "focus": "clarity_and_engagement"
+            }
+          }
+        },
+        {
+          "section_id": "1.3",
+          "section_name": "Visual Content & Brand Requirements",
+          "strategic_questions": [
+            {
+              "question_id": "q1.3.1",
+              "question_text": "기업 브랜딩 가이드라인이 있나요?",
+              "question_type": "boolean_with_details",
+              "required": true,
+              "weight": 9,
+              "follow_up": "색상, 폰트, 로고 사용법을 알려주세요"
+            },
+            {
+              "question_id": "q1.3.2",
+              "question_text": "선호하는 색상 톤은?",
+              "question_type": "single_choice",
+              "options": ["차분한", "활기찬", "전문적인", "창의적인"],
+              "required": true,
+              "weight": 8
+            },
+            {
+              "question_id": "q1.3.3",
+              "question_text": "이미지나 동영상 자료가 필요한가요?",
+              "question_type": "boolean_with_details",
+              "required": true,
+              "weight": 7
+            },
+            {
+              "question_id": "q1.3.4",
+              "question_text": "차트나 그래프로 표현할 데이터가 있나요?",
+              "question_type": "boolean_with_details",
+              "required": true,
+              "weight": 8
+            }
+          ],
+          "customized_directions": {
+            "brand_compliant": {
+              "template_type": "Corporate template with strict guidelines",
+              "customization_level": "low",
+              "priority": "brand_consistency"
+            },
+            "creative_freedom": {
+              "template_type": "Modern, trendy design with flexible color palette",
+              "customization_level": "high",
+              "priority": "visual_impact"
+            },
+            "data_heavy": {
+              "template_type": "Professional templates optimized for charts and graphs",
+              "customization_level": "medium",
+              "priority": "data_clarity"
+            },
+            "image_rich": {
+              "template_type": "Visual-focused layouts with multimedia support",
+              "customization_level": "high",
+              "priority": "visual_storytelling"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": 2,
+      "phase_name": "Advanced Template Research & Strategic Matching",
+      "phase_description": "Template preference discovery and technical constraint assessment",
+      "sections": [
+        {
+          "section_id": "2.1",
+          "section_name": "Template Preference Discovery",
+          "strategic_questions": [
+            {
+              "question_id": "q2.1.1",
+              "question_text": "선호하는 디자인 스타일은?",
+              "question_type": "single_choice",
+              "options": ["미니멀", "모던", "클래식", "크리에이티브"],
+              "required": true,
+              "weight": 10
+            },
+            {
+              "question_id": "q2.1.2",
+              "question_text": "슬라이드당 정보 밀도 선호도는?",
+              "question_type": "single_choice",
+              "options": ["간결", "보통", "상세"],
+              "required": true,
+              "weight": 8
+            },
+            {
+              "question_id": "q2.1.3",
+              "question_text": "애니메이션이나 전환 효과를 사용하고 싶나요?",
+              "question_type": "single_choice",
+              "options": ["최소한으로", "적절히", "많이", "사용 안 함"],
+              "required": true,
+              "weight": 6
+            },
+            {
+              "question_id": "q2.1.4",
+              "question_text": "업계나 분야 특성상 고려해야 할 디자인 요소가 있나요?",
+              "question_type": "text",
+              "required": false,
+              "weight": 7
+            }
+          ],
+          "template_matching_algorithm": {
+            "미니멀": {
+              "search_keywords": ["minimal", "clean", "white space", "simple"],
+              "color_scheme": "monochromatic_or_limited",
+              "typography": "sans_serif_clean",
+              "layout": "spacious"
+            },
+            "모던": {
+              "search_keywords": ["modern", "contemporary", "sleek", "professional"],
+              "color_scheme": "bold_accents",
+              "typography": "geometric_sans_serif",
+              "layout": "asymmetric_balanced"
+            },
+            "클래식": {
+              "search_keywords": ["classic", "traditional", "elegant", "formal"],
+              "color_scheme": "conservative_neutral",
+              "typography": "serif_or_traditional",
+              "layout": "symmetric_formal"
+            },
+            "크리에이티브": {
+              "search_keywords": ["creative", "artistic", "unique", "bold"],
+              "color_scheme": "vibrant_diverse",
+              "typography": "mixed_expressive",
+              "layout": "unconventional_dynamic"
+            }
+          }
+        },
+        {
+          "section_id": "2.2",
+          "section_name": "Technical Constraints Assessment",
+          "strategic_questions": [
+            {
+              "question_id": "q2.2.1",
+              "question_text": "사용하는 PowerPoint 버전은?",
+              "question_type": "single_choice",
+              "options": ["2016", "2019", "2021", "Microsoft 365", "Mac용 PowerPoint", "기타"],
+              "required": true,
+              "weight": 9
+            },
+            {
+              "question_id": "q2.2.2",
+              "question_text": "파일 크기 제한이 있나요?",
+              "question_type": "single_choice",
+              "options": ["이메일 첨부 (25MB 이하)", "클라우드 공유", "제한 없음"],
+              "required": true,
+              "weight": 7
+            },
+            {
+              "question_id": "q2.2.3",
+              "question_text": "다른 사람과 협업해야 하나요? 편집 권한이 필요한가요?",
+              "question_type": "boolean_with_details",
+              "required": true,
+              "weight": 6
+            },
+            {
+              "question_id": "q2.2.4",
+              "question_text": "PDF 변환이나 온라인 공유가 필요한가요?",
+              "question_type": "multiple_choice",
+              "options": ["PDF 변환", "온라인 공유", "인쇄용", "모두 필요", "불필요"],
+              "required": true,
+              "weight": 7
+            }
+          ],
+          "technical_optimizations": {
+            "legacy_versions": {
+              "powerpoint_2016": {
+                "animations": "simplified",
+                "fonts": "system_fonts_only",
+                "effects": "basic",
+                "compatibility_mode": true
+              },
+              "powerpoint_2019": {
+                "animations": "standard",
+                "fonts": "embedded_recommended",
+                "effects": "moderate",
+                "compatibility_mode": false
+              }
+            },
+            "modern_versions": {
+              "powerpoint_2021": {
+                "animations": "advanced",
+                "fonts": "custom_embedded",
+                "effects": "full_range",
+                "features": ["morph", "zoom", "icons"]
+              },
+              "microsoft_365": {
+                "animations": "all_features",
+                "fonts": "cloud_fonts_available",
+                "effects": "all_features",
+                "features": ["morph", "zoom", "icons", "3d", "stock_images", "collaboration"]
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": 3,
+      "phase_name": "Comprehensive Slide Architecture Design",
+      "phase_description": "Structure planning and flow/navigation design",
+      "sections": [
+        {
+          "section_id": "3.1",
+          "section_name": "Structure Planning",
+          "strategic_questions": [
+            {
+              "question_id": "q3.1.1",
+              "question_text": "예상 슬라이드 수는?",
+              "question_type": "single_choice",
+              "options": ["간결한 10-15장", "표준 20-30장", "상세한 40+장"],
+              "required": true,
+              "weight": 9
+            },
+            {
+              "question_id": "q3.1.2",
+              "question_text": "각 섹션별 중요도 비율은?",
+              "question_type": "text",
+              "required": false,
+              "weight": 7,
+              "placeholder": "예: 도입 20% / 본론 60% / 결론 20%"
+            },
+            {
+              "question_id": "q3.1.3",
+              "question_text": "질의응답을 위한 백업 슬라이드가 필요한가요?",
+              "question_type": "boolean",
+              "required": false,
+              "weight": 5
+            },
+            {
+              "question_id": "q3.1.4",
+              "question_text": "핸드아웃용 상세 버전이 별도로 필요한가요?",
+              "question_type": "boolean",
+              "required": false,
+              "weight": 6
+            }
+          ],
+          "structure_templates": {
+            "간결한 10-15장": {
+              "slides_per_point": 1,
+              "text_to_visual_ratio": "30:70",
+              "detail_level": "high_level_only",
+              "recommended_structure": {
+                "title_slide": 1,
+                "agenda": 1,
+                "content_slides": "8-11",
+                "conclusion": 1,
+                "thank_you": 1
+              }
+            },
+            "표준 20-30장": {
+              "slides_per_point": 2,
+              "text_to_visual_ratio": "50:50",
+              "detail_level": "balanced",
+              "recommended_structure": {
+                "title_slide": 1,
+                "agenda": 1,
+                "section_dividers": "2-3",
+                "content_slides": "15-23",
+                "conclusion": 1,
+                "thank_you": 1,
+                "backup_slides": "optional"
+              }
+            },
+            "상세한 40+장": {
+              "slides_per_point": 3,
+              "text_to_visual_ratio": "60:40",
+              "detail_level": "comprehensive",
+              "recommended_structure": {
+                "title_slide": 1,
+                "table_of_contents": 1,
+                "executive_summary": "2-3",
+                "section_dividers": "4-6",
+                "content_slides": "30-35",
+                "conclusion": "2-3",
+                "thank_you": 1,
+                "references": 1,
+                "backup_slides": "5-10"
+              }
+            }
+          }
+        },
+        {
+          "section_id": "3.2",
+          "section_name": "Flow & Navigation Design",
+          "strategic_questions": [
+            {
+              "question_id": "q3.2.1",
+              "question_text": "발표 중 특정 섹션으로 빠르게 이동해야 할 가능성이 있나요?",
+              "question_type": "boolean",
+              "required": true,
+              "weight": 7
+            },
+            {
+              "question_id": "q3.2.2",
+              "question_text": "청중 참여 요소가 필요한가요?",
+              "question_type": "multiple_choice",
+              "options": ["퀴즈", "토론", "투표", "Q&A", "불필요"],
+              "required": false,
+              "weight": 6
+            },
+            {
+              "question_id": "q3.2.3",
+              "question_text": "발표자 노트가 상세히 필요한가요?",
+              "question_type": "boolean",
+              "required": true,
+              "weight": 7
+            },
+            {
+              "question_id": "q3.2.4",
+              "question_text": "실시간 질문 대응을 위한 유연성이 필요한가요?",
+              "question_type": "boolean",
+              "required": false,
+              "weight": 6
+            }
+          ],
+          "navigation_strategies": {
+            "interactive_presentation": {
+              "features": ["navigation_buttons", "hyperlinked_agenda", "section_jump_links"],
+              "slide_master_setup": "custom_with_navigation",
+              "recommended_tools": ["action_buttons", "hyperlinks", "zoom_feature"]
+            },
+            "linear_presentation": {
+              "features": ["sequential_flow", "clear_transitions", "progress_indicators"],
+              "slide_master_setup": "standard_with_numbering",
+              "recommended_tools": ["slide_numbers", "section_headers", "breadcrumbs"]
+            },
+            "flexible_presentation": {
+              "features": ["modular_sections", "optional_slides", "multiple_paths"],
+              "slide_master_setup": "master_with_variants",
+              "recommended_tools": ["hidden_slides", "custom_shows", "zoom_feature"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": 4,
+      "phase_name": "Technical Optimization & Error Prevention",
+      "phase_description": "Compatibility and performance optimization",
+      "sections": [
+        {
+          "section_id": "4.1",
+          "section_name": "Compatibility Requirements",
+          "strategic_questions": [
+            {
+              "question_id": "q4.1.1",
+              "question_text": "다양한 기기에서 발표할 가능성이 있나요?",
+              "question_type": "multiple_choice",
+              "options": ["Windows", "Mac", "태블릿", "모두 가능", "Windows만"],
+              "required": true,
+              "weight": 8
+            },
+            {
+              "question_id": "q4.1.2",
+              "question_text": "프로젝터나 대형 스크린에서 발표하나요?",
+              "question_type": "boolean",
+              "required": true,
+              "weight": 8
+            },
+            {
+              "question_id": "q4.1.3",
+              "question_text": "인터넷 연결 없이 발표해야 할 가능성이 있나요?",
+              "question_type": "boolean",
+              "required": true,
+              "weight": 9
+            },
+            {
+              "question_id": "q4.1.4",
+              "question_text": "접근성 요구사항이 있나요?",
+              "question_type": "boolean_with_details",
+              "required": false,
+              "weight": 6,
+              "follow_up": "시각 장애인 지원 등 구체적인 요구사항을 알려주세요"
+            }
+          ],
+          "compatibility_guidelines": {
+            "cross_platform": {
+              "fonts": ["Arial", "Calibri", "Helvetica", "Times New Roman"],
+              "animations": "simple_only",
+              "media": "embedded_mp4_only",
+              "testing_required": true
+            },
+            "large_screen": {
+              "font_size_minimum": 24,
+              "contrast_ratio": "high",
+              "color_scheme": "high_contrast",
+              "image_resolution": "high_dpi"
+            },
+            "offline_presentation": {
+              "media_handling": "embed_all",
+              "fonts": "embed_required",
+              "links": "avoid_external",
+              "backup_formats": ["pdf", "video"]
+            },
+            "accessibility": {
+              "alt_text": "required_for_all_images",
+              "color_contrast": "wcag_aa_minimum",
+              "screen_reader_support": true,
+              "font_size": "large_options"
+            }
+          }
+        },
+        {
+          "section_id": "4.2",
+          "section_name": "Performance Optimization",
+          "strategic_questions": [
+            {
+              "question_id": "q4.2.1",
+              "question_text": "발표 중 성능 이슈를 피하고 싶은 특별한 이유가 있나요?",
+              "question_type": "text",
+              "required": false,
+              "weight": 6
+            },
+            {
+              "question_id": "q4.2.2",
+              "question_text": "파일 공유나 전송 방법은?",
+              "question_type": "single_choice",
+              "options": ["이메일", "클라우드", "USB", "기타"],
+              "required": true,
+              "weight": 7
+            },
+            {
+              "question_id": "q4.2.3",
+              "question_text": "동영상이나 오디오 파일이 포함될 예정인가요?",
+              "question_type": "boolean_with_details",
+              "required": true,
+              "weight": 8
+            },
+            {
+              "question_id": "q4.2.4",
+              "question_text": "실시간 편집이나 업데이트가 필요할 수 있나요?",
+              "question_type": "boolean",
+              "required": false,
+              "weight": 5
+            }
+          ],
+          "optimization_strategies": {
+            "performance_critical": {
+              "image_optimization": {
+                "max_resolution": "1920x1080",
+                "compression": "high_quality_compressed",
+                "format": "jpg_for_photos_png_for_graphics"
+              },
+              "animations": "minimal_essential_only",
+              "transitions": "simple_fades_only",
+              "file_size_target": "under_50mb"
+            },
+            "large_file_handling": {
+              "compression": "aggressive",
+              "modular_approach": "separate_files_per_section",
+              "media_linking": "link_instead_of_embed",
+              "cleanup": "remove_unused_masters_and_layouts"
+            },
+            "media_rich": {
+              "video_embedding": "recommended_for_short_clips",
+              "video_linking": "recommended_for_long_videos",
+              "audio_format": "compressed_mp3",
+              "backup_plan": "separate_media_folder"
+            },
+            "dynamic_content": {
+              "master_slide_structure": "well_organized",
+              "placeholder_usage": "consistent",
+              "naming_conventions": "clear_and_systematic",
+              "version_control": "recommended"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "phase_id": 5,
+      "phase_name": "Implementation Strategy & Guidance",
+      "phase_description": "Creation timeline, resources, and future scalability",
+      "sections": [
+        {
+          "section_id": "5.1",
+          "section_name": "Creation Timeline & Resources",
+          "strategic_questions": [
+            {
+              "question_id": "q5.1.1",
+              "question_text": "PPT 제작에 할애할 수 있는 시간은?",
+              "question_type": "single_choice",
+              "options": ["1일", "1주", "1개월", "그 이상"],
+              "required": true,
+              "weight": 9
+            },
+            {
+              "question_id": "q5.1.2",
+              "question_text": "디자인 경험 수준은?",
+              "question_type": "single_choice",
+              "options": ["초보자", "중급자", "고급자"],
+              "required": true,
+              "weight": 8
+            },
+            {
+              "question_id": "q5.1.3",
+              "question_text": "외부 리소스 활용이 가능한가요?",
+              "question_type": "multiple_choice",
+              "options": ["스톡 이미지", "디자이너 협업", "무료 템플릿만", "모두 가능"],
+              "required": true,
+              "weight": 7
+            },
+            {
+              "question_id": "q5.1.4",
+              "question_text": "완성 후 피드백 수렴 과정이 있나요?",
+              "question_type": "boolean_with_details",
+              "required": false,
+              "weight": 6
+            }
+          ],
+          "implementation_roadmaps": {
+            "tight_timeline_1day": {
+              "approach": "template_based_rapid_deployment",
+              "steps": [
+                "Select pre-designed template (1 hour)",
+                "Customize colors and fonts (30 mins)",
+                "Add content to slides (4 hours)",
+                "Review and minor adjustments (1.5 hours)",
+                "Final export and testing (1 hour)"
+              ],
+              "resources": "pre_made_templates_only",
+              "customization_level": "minimal"
+            },
+            "standard_timeline_1week": {
+              "approach": "semi_custom_development",
+              "steps": [
+                "Day 1: Research and template selection",
+                "Day 2-3: Content structuring and slide drafting",
+                "Day 4-5: Design customization and visual enhancement",
+                "Day 6: Review, feedback, and revisions",
+                "Day 7: Final polish and testing"
+              ],
+              "resources": "templates_plus_stock_images",
+              "customization_level": "moderate"
+            },
+            "extended_timeline_1month": {
+              "approach": "fully_custom_professional_design",
+              "steps": [
+                "Week 1: Deep discovery, strategy, and wireframing",
+                "Week 2: Custom template design and master slide creation",
+                "Week 3: Content development and design application",
+                "Week 4: Refinement, testing, and optimization"
+              ],
+              "resources": "custom_graphics_professional_imagery",
+              "customization_level": "high"
+            }
+          }
+        },
+        {
+          "section_id": "5.2",
+          "section_name": "Future Scalability & Maintenance",
+          "strategic_questions": [
+            {
+              "question_id": "q5.2.1",
+              "question_text": "이 PPT를 템플릿으로 활용할 계획이 있나요?",
+              "question_type": "boolean",
+              "required": false,
+              "weight": 7
+            },
+            {
+              "question_id": "q5.2.2",
+              "question_text": "정기적으로 업데이트해야 할 내용이 있나요?",
+              "question_type": "boolean_with_details",
+              "required": false,
+              "weight": 6
+            },
+            {
+              "question_id": "q5.2.3",
+              "question_text": "다른 팀원들이 편집해야 할 가능성이 있나요?",
+              "question_type": "boolean",
+              "required": false,
+              "weight": 7
+            },
+            {
+              "question_id": "q5.2.4",
+              "question_text": "향후 확장이나 변형 버전이 필요할 수 있나요?",
+              "question_type": "boolean_with_details",
+              "required": false,
+              "weight": 6
+            }
+          ],
+          "scalability_strategies": {
+            "template_creation": {
+              "master_slide_optimization": "required",
+              "style_guide_documentation": "comprehensive",
+              "layout_variants": "multiple_options",
+              "instructions": "detailed_usage_guide"
+            },
+            "regular_updates": {
+              "structure": "modular_sections",
+              "edit_zones": "clearly_marked",
+              "version_naming": "systematic",
+              "changelog": "maintained"
+            },
+            "team_collaboration": {
+              "naming_conventions": "standardized",
+              "edit_guidelines": "documented",
+              "master_protection": "recommended",
+              "training": "provided"
+            },
+            "future_expansion": {
+              "framework": "scalable_design_system",
+              "consistency": "strict_guidelines",
+              "modularity": "high",
+              "documentation": "comprehensive"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  
+  "scoring_system": {
+    "description": "Weighted scoring system for template matching",
+    "total_possible_score": 100,
+    "weight_distribution": {
+      "content_goals": 25,
+      "audience_context": 20,
+      "design_preferences": 20,
+      "technical_requirements": 15,
+      "timeline_resources": 10,
+      "scalability": 10
+    },
+    "recommendation_thresholds": {
+      "perfect_match": 90,
+      "excellent_match": 80,
+      "good_match": 70,
+      "acceptable_match": 60,
+      "needs_customization": 50
+    }
+  },
+  
+  "template_search_parameters": {
+    "search_platforms": [
+      "Microsoft Office Templates",
+      "SlidesCarnival",
+      "Canva",
+      "Envato Elements",
+      "GraphicRiver",
+      "SlideModel",
+      "24Slides",
+      "Free PowerPoint Templates"
+    ],
+    "search_filters": {
+      "style": ["minimal", "modern", "classic", "creative", "professional"],
+      "color_schemes": ["beige_orange", "blue_gray", "green_white", "purple_pink", "custom"],
+      "slide_count": ["10-15", "20-30", "40+"],
+      "industry": ["education", "business", "healthcare", "technology", "finance", "marketing"],
+      "features": ["charts", "infographics", "image_placeholders", "icons", "maps", "timelines"]
+    }
+  },
+  
+  "quality_assurance_checklist": {
+    "content_validation": [
+      "All strategic questions answered",
+      "Key requirements clearly understood",
+      "Priorities established",
+      "Conflicts resolved"
+    ],
+    "design_validation": [
+      "Template matches user preferences",
+      "Color scheme appropriate",
+      "Typography suitable",
+      "Layout supports content"
+    ],
+    "technical_validation": [
+      "Compatibility verified",
+      "Performance optimized",
+      "File size acceptable",
+      "Media properly handled"
+    ],
+    "usability_validation": [
+      "Navigation intuitive",
+      "Editing straightforward",
+      "Instructions clear",
+      "Support materials provided"
+    ]
+  },
+  
+  "adaptive_communication_protocols": {
+    "experience_level_adaptations": {
+      "초보자": {
+        "language": "simple_and_clear",
+        "examples": "abundant",
+        "step_by_step": true,
+        "technical_depth": "minimal"
+      },
+      "중급자": {
+        "language": "balanced",
+        "examples": "moderate",
+        "step_by_step": "for_complex_tasks_only",
+        "technical_depth": "moderate"
+      },
+      "고급자": {
+        "language": "technical_terms_ok",
+        "examples": "minimal",
+        "step_by_step": false,
+        "technical_depth": "detailed"
+      }
+    },
+    "response_formats": {
+      "visual_examples": "provide_when_explaining_design_concepts",
+      "quantified_recommendations": "use_percentages_scores_timelines",
+      "priority_ordering": "most_important_first",
+      "alternative_options": "present_when_applicable"
+    }
+  }
+}
